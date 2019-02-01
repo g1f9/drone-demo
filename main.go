@@ -5,9 +5,9 @@ import (
 )
 
 func main() {
-    fmt.Printf("hello world");
+    fmt.Printf("Hello");
 }
 
 func hello() string {
-    return "hello world";
+    return "Hello";
 }
