@@ -1,17 +1,10 @@
 workspace:
-  base: /srv/drone-demo
-  path: .
+  base: /go
+  path: src/gogs.kikakika.com/lihongfeng/first
 
 pipeline:
   build:
-     image: golang:alpine
-     # pull: true
-     environment:
-       - KEY=VALUE
-     secrets: [key1, key2]
-     commands:
-       - echo $$KEY
-       - pwd
-       - ls
-       - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
-       - ./app
+    image: golang:1.10.2
+    commands:
+      - go test
+      - go build
